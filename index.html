@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Coffee Sys</title>
+    <!-- Google Fonts for Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="../img/icon.jpg" type="image/x-icon">
+
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Storm&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <div class="hero-section" id="Modal_New">
+        <div class="hero-content">
+            <h1 class="hero-title">مَقهى مُذهِلة</h1>
+            <p class="hero-desc">
+                System to manage your coffee shop orders efficiently and effortlessly.
+
+            </p>
+            <div class="d-flex justify-content-center">
+                <button type="button"   class="btn-custom" data-bs-toggle="modal" data-bs-target="#posModal">
+                    <i class="bi bi-cup-hot-fill me-2"></i> New Order
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- POS Modal -->
+    <div class="modal fade" id="posModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div  style="text-align: center !important; display: column; justify-content: center; align-items:center !important;">
+                    <h5 class="modal-title" >
+                    <span class="cartTotall">0.00 dh</span>
+
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="position: absolute; top: 10px; right: 9px; padding: 8px;"></button>
+                    <button type="button" class="modeButton" onclick="scrolltocardTotal()"    style="display: none;"  class="btn btn-outline-success">Done</button>
+
+                </div>
+                
+                <div class="modal-body">
+                    <div class="pos-layout">
+                        <!-- Left Side: Products -->
+                        <div class="product-area">
+                           
+                            
+                            <div class="product-grid" id="productGrid">
+                                <!-- Products injected via JS -->
+                            </div>
+                        </div>
+
+                        <!-- Right Side: Cart -->
+                        <div class="cart-area">
+                            <div class="cart-header">
+                                Delete <span class="delet" onclick="clearCart()"><i class="bi bi-trash3-fill"></i></span>
+                            </div>
+                            
+                            
+                            <div class="cart-items" id="cartItems">
+                                <!-- Empty State -->
+                                <div class="text-center text-muted mt-5 empty-cart-msg">
+                                    <i class="bi bi-cart-x display-4"></i>
+                                    <p class="mt-2">No items selected</p>
+                                </div>
+                            </div>
+
+                            <div class="cart-total" id="cardTotal">
+                                <div class="total-row">
+                                    <span>Total</span>
+                                    <span class="cartTotal">dh0.00</span>
+                                </div>
+                                <button class="btn btn-warning w-100 fw-bold py-2" style="background-color: var(--accent-gold); border:none; color:black;" onclick="showTicketsOrder()">
+                                    Confirm Order
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container for Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+
+
+
+    <!-- tickets Modal orders -->
+     
+<div class="modal fade" id="tickerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="height: auto !important;">
+  <div class="modal-dialog" >
+    <div class="modal-content">
+
+
+      <div class="modal-header" style="display: flex; justify-content: center !important;">
+        <h1 class="modal-title " style="font-size: 45px;" id="exampleModalLabel" >مَقهى مُذهِلة</h1>
+      </div>
+
+
+
+
+      <div class="modal-body" style="background-color: whitesmoke !important; color: black;">
+        <section style="text-align: center; margin-top: 20px;">
+             <p><b>N 543 AV MOLAY RACHID ROUTE PARIS</b> </p>
+        <h4><i>"Wifi: 20242025"</i></h4>
+        </section>
+       
+
+
+
+        <p  class="borderTicket" style="border-bottom: 2px dashed rgb(250, 239, 239); margin: 20px 20px 20px 20px; ">  </p>
+        <ul>
+            <li><b>Date: </b> <span id="Datee" style="margin-left: 10px;"></span >    <span id="time" style="margin-left: 10px;">  </span>
+            </li>
+            <li><b>Serveur: </b><span id="Serveur" style="margin-left: 10px;"></span></li>
+        </ul>
+        <p class="borderTicket"></p>
+
+        <!--  table -->
+        <section style="width: 80%; margin: 0 auto;">
+            
+<table class="table" style="width: 100%; ">
+  <thead>
+    <tr >
+      <th >Qte</th>
+      <th >Product</th>
+      <th>Price Product</th>
+    </tr>
+  </thead>
+
+
+  <tbody id="data_order">
+    
+
+
+
+   
+  </tbody>
+
+</table>
+
+        </section>
+ <p class="borderTicket"></p>
+ 
+ <h3 style="margin: 20px; text-align: center;" > Total : <span id="totalorder"> </span></h3>
+
+  <p class="borderTicket"></p>
+
+  <p style="text-align: center;"><i>******Thank you for your visit [See you soon 👋]****** </i></p>
+
+
+<button type="button"  id="print" class="btn btn-outline-success" style="margin-left: 40%;" onclick="print_ticket()">Print Ticket</button>
+
+      </div>
+
+    </div>
+
+
+
+  </div>
+</div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script src="scripte.js"></script>
+</body>
+</html>
