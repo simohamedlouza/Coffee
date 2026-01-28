@@ -2,22 +2,22 @@
         // --- Data ---
         // Using icons instead of local images for reliability in this demo
         const products = [
-            { id: 1, name: 'Espresso', price: 13 , icon: '../img/black-coffe.jpg' },
-            { id: 3, name: 'Cappuccino', price: 20, icon: '../img/capussino.jpg' },
-            { id: 6, name: 'Iced Tea', price: 13, icon: '../img/tee.jpg' },
-            { id: 8, name: 'Water', price: 5, icon: '../img/water.jpg' },
-            { id: 9, name: 'Orange Juice', price: 20, icon: '../img/lemon.jpg' },
+            { id: 1, name: 'Espresso', price: 13 , icon: './img/black-coffe.jpg' },
+            { id: 3, name: 'Cappuccino', price: 20, icon: './img/capussino.jpg' },
+            { id: 6, name: 'Iced Tea', price: 13, icon: './img/tee.jpg' },
+            { id: 8, name: 'Water', price: 5, icon: './img/water.jpg' },
+            { id: 9, name: 'Orange Juice', price: 20, icon: './img/lemon.jpg' },
             { id: 10, name: 'coca', price: 14, icon: 'https://tremus.cl/wp-content/uploads/2024/02/Bebida-Coca-Cola-Sin-Azucar-350cc.jpg' },
-            { id: 11, name: 'fraise', price: 13, icon: '../img/fraise.jpg' },
+            { id: 11, name: 'fraise', price: 13, icon: './img/fraise.jpg' },
             { id: 12, name: 'Croissant', price: 4, icon: 'https://img.delicious.com.au/5PiJMQy-/w759-h506-cfill/del/2015/12/cornetti-italian-croissants-24713-1.jpg' },
-            { id: 13, name: 'Muffin', price: 6, icon: '../img/muffin.jpg' },
-            { id: 14, name: 'Bagel', price: 8, icon: '../img/bagel.jpg' },
-            { id: 15, name: 'hawai', price: 7, icon: '../img/huwai.jpg' },
-            { id: 16, name: 'milkchokolat', price: 13, icon: '../img/milkchokolat.jpg' },
-            { id: 17, name: 'juicekiwi', price: 20, icon: '../img/juicekiwi.jpg' },
-            { id: 18, name: 'redvelvet', price: 25, icon: '../img/redvelvet.jpg' },
-            { id: 19, name: 'blueberry', price: 26, icon: '../img/blueberry.jpg' },
-            { id: 20, name: 'lemoncake', price: 20, icon: '../img/lemoncake.jpg' },
+            { id: 13, name: 'Muffin', price: 6, icon: './img/muffin.jpg' },
+            { id: 14, name: 'Bagel', price: 8, icon: './img/bagel.jpg' },
+            { id: 15, name: 'hawai', price: 7, icon: './img/huwai.jpg' },
+            { id: 16, name: 'milkchokolat', price: 13, icon: './img/milkchokolat.jpg' },
+            { id: 17, name: 'juicekiwi', price: 20, icon: './img/juicekiwi.jpg' },
+            { id: 18, name: 'redvelvet', price: 25, icon: './img/redvelvet.jpg' },
+            { id: 19, name: 'blueberry', price: 26, icon: './img/blueberry.jpg' },
+            { id: 20, name: 'lemoncake', price: 20, icon: './img/lemoncake.jpg' },
         ];
 
         let cart = [];
@@ -268,6 +268,7 @@ function print_ticket(){
     document.body.innerHTML = tickerModal.innerHTML;
     window.print();
     window.location.reload();
+
 
 
 
