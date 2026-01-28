@@ -10,7 +10,6 @@
             { id: 10, name: 'coca', price: 14, icon: 'https://tremus.cl/wp-content/uploads/2024/02/Bebida-Coca-Cola-Sin-Azucar-350cc.jpg' },
             { id: 11, name: 'fraise', price: 13, icon: './img/fraise.jpg' },
             { id: 12, name: 'Croissant', price: 4, icon: 'https://img.delicious.com.au/5PiJMQy-/w759-h506-cfill/del/2015/12/cornetti-italian-croissants-24713-1.jpg' },
-            { id: 13, name: 'Muffin', price: 6, icon: './img/muffin.jpg' },
             { id: 14, name: 'Bagel', price: 8, icon: './img/bagel.jpg' },
             { id: 15, name: 'hawai', price: 7, icon: './img/huwai.jpg' },
             { id: 16, name: 'milkchokolat', price: 13, icon: './img/milkchokolat.jpg' },
@@ -273,3 +272,4 @@ function print_ticket(){
 
 
 }
+
