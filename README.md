@@ -1,4 +1,6 @@
 
+<a href="https://simohamedlouza.github.io/Coffee/"> Visit Now</a>
+
 <h2> Home System</h2>
 <img src="https://raw.githubusercontent.com/simohamedlouza/Coffee/refs/heads/main/Home.png" alt="Home">
 
